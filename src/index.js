@@ -21,13 +21,9 @@ async function handleRequest(request) {
             response = await gd.fetchList(path);
         else
             response = await gd.fetchFile(path, request.headers.get('Range'));
-    }
-    // else if (method === 'POST') {
-    //
-    // } else if (method === 'PUT') {
-    //
-    // }
-    else {
+    } else if (method === 'PROPFIND') {
+
+    } else {
         response = new Response(null, {status: 405})
     }
 
